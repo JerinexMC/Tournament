@@ -1,0 +1,39 @@
+name: CasualTournament
+version: 1.0.0
+main: com.casualsmp.tournament.CasualTournament
+api-version: '1.21'
+description: Automated PvP tournament system for Casual SMP
+softdepend:
+  - Vault
+
+commands:
+  tournament:
+    description: Main command for CasualTournament
+    usage: /tournament <subcommand>
+    aliases: [ct, tourney]
+
+permissions:
+  tournament.admin:
+    description: Full tournament administration permissions
+    default: op
+  tournament.join:
+    description: Register for tournaments
+    default: true
+  tournament.team:
+    description: Create and manage tournament teams
+    default: true
+  tournament.spectate:
+    description: Spectate tournament matches
+    default: true
+  tournament.stats:
+    description: View tournament statistics
+    default: true
+  tournament.*:
+    description: Wildcard administrative permission
+    default: op
+    children:
+      tournament.admin: true
+      tournament.join: true
+      tournament.team: true
+      tournament.spectate: true
+      tournament.stats: true

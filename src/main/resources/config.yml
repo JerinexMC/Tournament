@@ -1,0 +1,80 @@
+# CasualTournament v1.0 Configuration
+
+tournament:
+  min-team-size: 1
+  max-team-size: 32
+  min-teams: 2
+  max-teams: 64
+  solo-registration: true
+  random-team-assignment: true
+  invite-expiry-seconds: 60
+
+match:
+  preparation-seconds: 3
+  countdown-seconds: 5
+  timeout-seconds: 300
+  disconnect-grace-seconds: 15
+  disconnect-counts-as-loss: true
+
+inventory:
+  restore-on-exit: true
+  use-tournament-kit: false
+  clear-effects-on-start: true
+  kit-items:
+    - "DIAMOND_SWORD:1"
+    - "SHIELD:1"
+    - "GOLDEN_APPLE:8"
+    - "COOKED_BEEF:32"
+  kit-helmet: "DIAMOND_HELMET"
+  kit-chestplate: "DIAMOND_CHESTPLATE"
+  kit-leggings: "DIAMOND_LEGGINGS"
+  kit-boots: "DIAMOND_BOOTS"
+
+spectator:
+  enabled: true
+  prevent-block-interaction: true
+  prevent-damage: true
+
+protection:
+  prevent-block-break: true
+  prevent-block-place: true
+  prevent-outsider-combat: true
+  prevent-unauthorized-teleport: true
+  blocked-commands:
+    - "/spawn"
+    - "/home"
+    - "/tpa"
+    - "/tpahere"
+    - "/warp"
+    - "/back"
+    - "/rtp"
+    - "/kill"
+    - "/suicide"
+    - "/fly"
+    - "/enderchest"
+    - "/ec"
+
+rewards:
+  use-vault: false
+  vault-winner-amount: 500.0
+  vault-runner-up-amount: 150.0
+  winner:
+    - "give %player% diamond 16"
+  runner-up:
+    - "give %player% diamond 8"
+
+gui:
+  main-title: "&6&lCasualTournament Menu"
+  size: 27
+
+messages:
+  prefix: "&6&lTOURNAMENT &8» &f"
+  registration-open: "&6&lTOURNAMENT &fRegistration is now open for &e%mode% &f(Max teams: &e%max_teams%&f)!"
+  tournament-start: "&6&lTOURNAMENT &fThe tournament has officially &aSTARTED&f! Good luck to all fighters!"
+  match-assigned: "&e%red% &7vs &b%blue% &fassigned to arena &e%arena%&f!"
+  countdown-tick: "&e%red% &7vs &b%blue% &fstarting in &c%seconds% &fseconds!"
+  fight: "&c&lFIGHT!"
+  match-winner: "&a%winner% &fhas won the match against &7%loser%&f!"
+  next-round: "&6&lROUND %round% &fMatches are now forming!"
+  grand-final: "&6&lGRAND FINAL &e%red% &7vs &b%blue%&f!"
+  champion: "&6&lGRAND FINAL &8| &e&lCHAMPION: %champion%!"
